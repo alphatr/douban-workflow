@@ -15,17 +15,15 @@ const getRemote = function getRemote(url, query) {
     const option = {
         url,
         qs: {
-            q: query,
-            count: QUERY_COUNT,
-            apikey: API_KEY
+            'q': query,
+            'count': QUERY_COUNT,
+            'apikey': API_KEY
         },
         timeout: REQUEST_TIMEOUT
     };
 
     return new Promise((resolve, reject) => {
         request(option, (error, response, body) => {
-            'use strict';
-
             if (error) {
                 console.log(`get remote content error:${error.toString()} ## ${url}`);
                 reject(error);
@@ -68,7 +66,7 @@ const rating = function rating(val, max) {
  * @param  {String} query 搜索词
  * @return {Promise}      异步结果
  */
-const listMusic = function getMovie(query) {
+const listMusic = function listMusic(query) {
     const url = 'https://api.douban.com/v2/music/search';
     return getRemote(url, query).then(res => res.musics.map(subject => {
         const subtitle = [
@@ -94,7 +92,7 @@ const listMusic = function getMovie(query) {
  * @param  {String} query 搜索词
  * @return {Promise}      异步结果
  */
-const listMovie = function getMovie(query) {
+const listMovie = function listMovie(query) {
     const url = 'https://api.douban.com/v2/movie/search';
     return getRemote(url, query).then(res => res.subjects.map(subject => {
         const subtitle = [
@@ -121,7 +119,7 @@ const listMovie = function getMovie(query) {
  * @param  {String} query 搜索词
  * @return {Promise}      异步结果
  */
-const listBooks = function getMovie(query) {
+const listBooks = function listBooks(query) {
     const url = 'https://api.douban.com/v2/book/search';
     return getRemote(url, query).then(res => res.books.map(subject => {
         const subtitle = [

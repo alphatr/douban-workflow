@@ -29,6 +29,17 @@ workflow.setName('douban-workflow');
             }
 
             workflow.feedback();
+        }, () => {
+            workflow.addItem(new Item({
+                uid: 'douban',
+                title: '糟糕...',
+                arg: `http://movie.douban.com/subject_search?search_text=${query}`,
+                icon: Alfred.ICONS.WARNING,
+                subtitle: '没找到符合条件的内容, 去豆瓣搜搜看？',
+                valid: true
+            }));
+
+            workflow.feedback();
         });
     });
 
@@ -46,6 +57,17 @@ workflow.setName('douban-workflow');
                     valid: true
                 }));
             }
+
+            workflow.feedback();
+        }, () => {
+            workflow.addItem(new Item({
+                uid: 'douban',
+                title: '糟糕...',
+                arg: `http://movie.douban.com/subject_search?search_text=${query}`,
+                icon: Alfred.ICONS.WARNING,
+                subtitle: '没找到符合条件的影视, 去豆瓣搜搜看？',
+                valid: true
+            }));
 
             workflow.feedback();
         });
@@ -67,6 +89,17 @@ workflow.setName('douban-workflow');
             }
 
             workflow.feedback();
+        }, () => {
+            workflow.addItem(new Item({
+                uid: 'douban',
+                title: '糟糕...',
+                arg: `http://movie.douban.com/subject_search?search_text=${query}`,
+                icon: Alfred.ICONS.WARNING,
+                subtitle: '没找到符合条件的图书, 去豆瓣搜搜看？',
+                valid: true
+            }));
+
+            workflow.feedback();
         });
     });
 
@@ -84,6 +117,17 @@ workflow.setName('douban-workflow');
                     valid: true
                 }));
             }
+
+            workflow.feedback();
+        }, () => {
+            workflow.addItem(new Item({
+                uid: 'douban',
+                title: '糟糕...',
+                arg: `http://movie.douban.com/subject_search?search_text=${query}`,
+                icon: Alfred.ICONS.WARNING,
+                subtitle: '没找到符合条件的音乐, 去豆瓣搜搜看？',
+                valid: true
+            }));
 
             workflow.feedback();
         });
